@@ -282,7 +282,7 @@
 <body>
 
   <div class="topbar">
-    <div class="title">MaiaWebView</div>
+    <div class="title">COMPOVIEW SCADA</div>
 
     <div class="status">
       <div class="status-box online">Sistema Online</div>
@@ -617,9 +617,40 @@
     }
 
 
-
-
     // ==================================================
+    // GOOGLE SHEETS HISTÓRICO
+    // ==================================================
+
+    async function salvarGoogleSheets() {
+
+      const dados = {
+        temp: document.getElementById('temp').innerHTML,
+        press: document.getElementById('press').innerHTML,
+        flow: document.getElementById('flow').innerHTML,
+        level: document.getElementById('level').innerHTML,
+        motor: document.getElementById('sliderMotor').value
+      };
+
+      try {
+
+        await fetch('https://script.google.com/macros/s/AKfycbx127sRTq8_erfCi6_NIqLYHikq6N9IvdZSAQxDJUlPKLDcxWV1i1tTNY-iU0Vnz3PS/exec', {
+          method: 'POST',
+          body: JSON.stringify(dados)
+        });
+
+        console.log('Dados salvos na planilha');
+
+      } catch(erro) {
+
+        console.error('Erro ao salvar:', erro);
+      }
+    }
+
+
+    // salva a cada 10 segundos
+    setInterval(salvarGoogleSheets, 10000);
+
+// ==================================================
     // FUNÇÃO PARA RECEBER DADOS DO APP INVENTOR / ESP32
     // ==================================================
 
