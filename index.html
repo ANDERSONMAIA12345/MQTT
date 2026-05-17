@@ -26,7 +26,7 @@ body{
 
 /* LOGIN */
 
-#login{
+#loginScreen{
   width:100%;
   height:100vh;
   display:flex;
@@ -34,7 +34,8 @@ body{
   align-items:center;
 }
 
-.login-box{
+.loginBox{
+
   width:350px;
   background:#111827;
   padding:30px;
@@ -42,106 +43,108 @@ body{
   border:1px solid #1f2937;
 }
 
-.login-box h1{
+.loginBox h1{
   text-align:center;
-  color:#22d3ee;
   margin-bottom:20px;
+  color:#00e5ff;
 }
 
-.login-box input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:none;
-  border-radius:10px;
-  background:#0f172a;
-  color:white;
-}
+.loginBox input{
 
-.login-box button{
   width:100%;
+  margin-top:12px;
   padding:14px;
   border:none;
   border-radius:10px;
-  background:#0891b2;
+  background:#1e293b;
   color:white;
+}
+
+.loginBox button{
+
+  width:100%;
+  margin-top:20px;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#00bcd4;
+  color:white;
+  font-size:16px;
   font-weight:bold;
   cursor:pointer;
 }
 
-/* PAINEL */
+.loginBox button:hover{
+  background:#0097a7;
+}
 
-#painel{
+.erro{
+  color:#ff6b6b;
+  margin-top:15px;
+  text-align:center;
+}
+
+/* DASHBOARD */
+
+#dashboard{
   display:none;
 }
 
 .topbar{
+
   width:100%;
   height:70px;
   background:#111827;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   padding:0 20px;
+
   border-bottom:2px solid #1f2937;
 }
 
 .title{
   font-size:28px;
   font-weight:bold;
-  color:#22d3ee;
+  color:#00e5ff;
 }
 
 .status{
   display:flex;
   gap:10px;
-  align-items:center;
 }
 
 .status-box{
-  background:#0f172a;
+
   padding:10px 15px;
   border-radius:10px;
-}
-
-.logout-btn{
-
-  background:#ff0000;
-
-  color:white;
-
-  border:none;
-
-  padding:12px 20px;
-
-  border-radius:12px;
-
-  cursor:pointer;
-
   font-weight:bold;
-
-  font-size:16px;
-
-  box-shadow:0 0 15px red;
-
-  transition:0.3s;
 }
 
-.logout-btn:hover{
+.online{
+  background:#065f46;
+  color:#6ee7b7;
+}
 
-  background:#cc0000;
-
-  transform:scale(1.05);
+.logout{
+  background:#b91c1c;
+  color:white;
+  cursor:pointer;
 }
 
 .container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
+
   padding:20px;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
 }
 
 .card{
+
   background:#111827;
   border-radius:20px;
   padding:20px;
@@ -149,66 +152,86 @@ body{
 }
 
 .card h2{
-  color:#22d3ee;
   margin-bottom:20px;
+  color:#00e5ff;
 }
 
 .sensor-grid{
+
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
 
 .sensor{
+
   background:#0f172a;
   padding:15px;
-  border-radius:12px;
+  border-radius:15px;
   text-align:center;
 }
 
+.sensor h3{
+  color:#94a3b8;
+  margin-bottom:10px;
+}
+
 .value{
-  font-size:30px;
-  font-weight:bold;
+  font-size:32px;
   color:#22d3ee;
+  font-weight:bold;
+}
+
+.unit{
+  color:#64748b;
 }
 
 .machine{
+
   background:#0f172a;
   padding:15px;
-  border-radius:12px;
-  margin-bottom:10px;
+  border-radius:15px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
+  margin-bottom:12px;
 }
 
 .indicator{
+
   width:18px;
   height:18px;
   border-radius:50%;
   background:lime;
+
   box-shadow:0 0 15px lime;
 }
 
 .indicator.off{
+
   background:red;
   box-shadow:0 0 15px red;
 }
 
 .buttons{
+
   display:flex;
   gap:10px;
-  margin-top:10px;
+  margin-top:15px;
 }
 
-.buttons button{
+button{
+
   flex:1;
   padding:12px;
   border:none;
   border-radius:10px;
-  background:#0891b2;
+  background:#00bcd4;
   color:white;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .chart-container{
@@ -216,13 +239,17 @@ body{
 }
 
 .slider-container{
-  margin-top:20px;
+
+  background:#0f172a;
+  padding:15px;
+  border-radius:15px;
 }
 
 .slider-value{
+
   text-align:center;
-  font-size:25px;
   margin-top:10px;
+  font-size:24px;
   color:#22d3ee;
 }
 
@@ -230,70 +257,25 @@ input[type=range]{
   width:100%;
 }
 
-.big-buttons{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:20px;
-}
-
-.big-btn{
-  padding:18px;
-  border:none;
-  border-radius:14px;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.green{background:#15803d;}
-.red{background:#b91c1c;}
-.orange{background:#c2410c;}
-.blue{background:#0369a1;}
-
-.tank{
-  width:100%;
-  height:220px;
-  background:#020617;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:20px;
-  position:relative;
-  border:3px solid #334155;
-}
-
-.liquid{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:0%;
-  background:linear-gradient(to top,#0284c7,#38bdf8);
-}
-
-.tank-label{
-  position:absolute;
-  top:50%;
-  width:100%;
+.footer{
   text-align:center;
-  transform:translateY(-50%);
-  font-size:30px;
-  font-weight:bold;
+  padding:20px;
+  color:#64748b;
 }
 
 </style>
-
 </head>
 <body>
 
 <!-- LOGIN -->
 
-<div id="login">
+<div id="loginScreen">
 
-  <div class="login-box">
+  <div class="loginBox">
 
-    <h1>MaiaWebView</h1>
+    <h1>LOGIN SCADA</h1>
 
-    <input type="text" id="nome" placeholder="Usuário">
+    <input type="text" id="usuario" placeholder="Usuário">
 
     <input type="password" id="senha" placeholder="Senha">
 
@@ -301,44 +283,40 @@ input[type=range]{
       ENTRAR
     </button>
 
+    <div class="erro" id="erro"></div>
+
   </div>
 
 </div>
 
 <!-- DASHBOARD -->
 
-<div id="painel">
-
-  <!-- TOPO -->
+<div id="dashboard">
 
   <div class="topbar">
 
-    <div class="title">
-      MaiaWebView SCADA
+    <div class="title" id="localNome">
+      MaiaWebView
     </div>
 
     <div class="status">
 
-      <div class="status-box" id="localNome">
-        LOCAL
+      <div class="status-box online">
+        MQTT ONLINE
       </div>
 
       <div class="status-box" id="clock">
         00:00:00
       </div>
 
-      <button
-        onclick="logout()"
-        class="logout-btn"
-      >
-        ⛔ LOGOFF
-      </button>
+      <div class="status-box logout"
+           onclick="logoff()">
+        SAIR
+      </div>
 
     </div>
 
   </div>
-
-  <!-- CONTAINER -->
 
   <div class="container">
 
@@ -353,28 +331,32 @@ input[type=range]{
         <div class="sensor">
           <h3>Temperatura</h3>
           <div class="value" id="temp">0</div>
+          <div class="unit">°C</div>
         </div>
 
         <div class="sensor">
           <h3>Pressão</h3>
           <div class="value" id="press">0</div>
+          <div class="unit">bar</div>
         </div>
 
         <div class="sensor">
           <h3>Vazão</h3>
           <div class="value" id="flow">0</div>
+          <div class="unit">L/min</div>
         </div>
 
         <div class="sensor">
           <h3>Nível</h3>
           <div class="value" id="level">0</div>
+          <div class="unit">%</div>
         </div>
 
       </div>
 
     </div>
 
-    <!-- MAQUINAS -->
+    <!-- MÁQUINAS -->
 
     <div class="card">
 
@@ -393,18 +375,18 @@ input[type=range]{
       <div class="buttons">
 
         <button onclick="toggleMachine('m1')">
-          Bomba 1
+          BOMBA 1
         </button>
 
         <button onclick="toggleMachine('m2')">
-          Bomba 2
+          BOMBA 2
         </button>
 
       </div>
 
     </div>
 
-    <!-- GRAFICO -->
+    <!-- HISTÓRICO -->
 
     <div class="card">
 
@@ -424,50 +406,17 @@ input[type=range]{
 
       <div class="slider-container">
 
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="0"
-          id="sliderMotor"
-          oninput="updateSlider(this.value)"
-        >
+        <label>Velocidade</label>
 
-        <div class="slider-value" id="sliderValue">
-          0%
-        </div>
+        <input type="range"
+               min="0"
+               max="100"
+               value="0"
+               id="sliderMotor"
+               oninput="updateSlider(this.value)">
 
-      </div>
-
-      <div class="big-buttons">
-
-        <button class="big-btn green"
-        onclick="enviarComando('START')">
-        START
-        </button>
-
-        <button class="big-btn red"
-        onclick="enviarComando('STOP')">
-        STOP
-        </button>
-
-        <button class="big-btn orange"
-        onclick="enviarComando('RESET')">
-        RESET
-        </button>
-
-        <button class="big-btn blue"
-        onclick="enviarComando('AUTO')">
-        AUTO
-        </button>
-
-      </div>
-
-      <div class="tank">
-
-        <div class="liquid" id="tankLiquid"></div>
-
-        <div class="tank-label" id="tankLabel">
+        <div class="slider-value"
+             id="sliderValue">
           0%
         </div>
 
@@ -477,151 +426,126 @@ input[type=range]{
 
   </div>
 
+  <div class="footer">
+    Sistema Supervisório Industrial
+  </div>
+
 </div>
 
 <script>
 
-// ============================================
-// RELOGIO
-// ============================================
+const scriptURL =
+'https://script.google.com/macros/s/AKfycbyknrxg1qQvwCe-EUYE1l8nRmWkCTDHuGibkzgOGbhFRYzlR-_iPEGpUDbmQryVAfd-/exec';
+
+let client;
+let topicos = {};
+
+// RELÓGIO
 
 function updateClock(){
 
-  const now = new Date();
-
-  document.getElementById('clock').innerHTML =
-  now.toLocaleTimeString();
+  document.getElementById('clock')
+  .innerHTML =
+  new Date().toLocaleTimeString();
 }
 
 setInterval(updateClock,1000);
 
-updateClock();
-
-// ============================================
 // LOGIN
-// ============================================
-
-const SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbyknrxg1qQvwCe-EUYE1l8nRmWkCTDHuGibkzgOGbhFRYzlR-_iPEGpUDbmQryVAfd-/exec';
-
-let topicos = {};
-let client = null;
 
 async function fazerLogin(){
 
-  const nome =
-  document.getElementById('nome').value;
+  const usuario =
+  document.getElementById('usuario').value;
 
   const senha =
   document.getElementById('senha').value;
 
   try{
 
-    const resposta = await fetch(
-      SCRIPT_URL +
-      '?nome=' + encodeURIComponent(nome) +
-      '&senha=' + encodeURIComponent(senha)
+    const resposta =
+    await fetch(
+      scriptURL +
+      '?nome=' + usuario +
+      '&senha=' + senha
     );
 
-    const dados = await resposta.json();
-
-    console.log(dados);
+    const dados =
+    await resposta.json();
 
     if(dados.status !== 'OK'){
 
-      alert('Login inválido');
+      document.getElementById('erro')
+      .innerHTML = 'Login inválido';
 
       return;
     }
 
-    document.getElementById('login').style.display =
-    'none';
+    // MOSTRA DASHBOARD
 
-    document.getElementById('painel').style.display =
-    'block';
+    document.getElementById('loginScreen')
+    .style.display = 'none';
 
-    document.getElementById('localNome').innerHTML =
-    dados.local;
+    document.getElementById('dashboard')
+    .style.display = 'block';
 
-    iniciarMQTT(dados);
+    document.getElementById('localNome')
+    .innerHTML = dados.local;
+
+    // MQTT
+
+    topicos = {
+
+      // LEITURA
+
+      temp: dados.mqttsalvo1,
+      press: dados.mqttsalvo2,
+      flow: dados.mqttsalvo3,
+      level: dados.mqttsalvo4,
+
+      leitura5: dados.mqttsalvo5,
+      leitura6: dados.mqttsalvo6,
+      leitura7: dados.mqttsalvo7,
+      leitura8: dados.mqttsalvo8,
+      leitura9: dados.mqttsalvo9,
+      leitura10: dados.mqttsalvo10,
+
+      // ESCRITA
+
+      salvar1: dados.mqttsalvar11,
+      salvar2: dados.mqttsalvar12,
+      salvar3: dados.mqttsalvar13,
+      salvar4: dados.mqttsalvar14,
+      salvar5: dados.mqttsalvar15,
+      salvar6: dados.mqttsalvar16,
+      salvar7: dados.mqttsalvar17,
+      salvar8: dados.mqttsalvar18,
+      salvar9: dados.mqttsalvar19,
+      salvar10: dados.mqttsalvar20
+    };
+
+    iniciarMQTT();
 
   }catch(erro){
 
-    alert('Erro ao conectar');
-
-    console.error(erro);
+    document.getElementById('erro')
+    .innerHTML = 'Erro conexão';
   }
 }
 
-// ============================================
 // LOGOFF
-// ============================================
 
-function logout(){
+function logoff(){
 
-  if(client){
-
+  if(client)
     client.end();
 
-    console.log('MQTT desconectado');
-  }
-
-  topicos = {};
-
-  document.getElementById('painel').style.display =
-  'none';
-
-  document.getElementById('login').style.display =
-  'flex';
-
-  document.getElementById('nome').value = '';
-
-  document.getElementById('senha').value = '';
-
-  document.getElementById('temp').innerHTML = '0';
-
-  document.getElementById('press').innerHTML = '0';
-
-  document.getElementById('flow').innerHTML = '0';
-
-  document.getElementById('level').innerHTML = '0';
-
-  document.getElementById('tankLabel').innerHTML =
-  '0%';
-
-  document.getElementById('tankLiquid').style.height =
-  '0%';
-
-  chart.data.labels = [];
-
-  chart.data.datasets[0].data = [];
-
-  chart.update();
-
-  alert('Logout realizado');
+  location.reload();
 }
 
-// ============================================
 // MQTT
-// ============================================
 
-function iniciarMQTT(dados){
-
-  topicos = {
-
-    temperatura: dados.mqtt1,
-    pressao: dados.mqtt2,
-    vazao: dados.mqtt3,
-    nivel: dados.mqtt4,
-
-    bomba1: dados.mqtt11,
-    bomba2: dados.mqtt12,
-
-    sliderSalvar: dados.mqtt12,
-    sliderSalvo: dados.mqtt2,
-
-    comandos: dados.mqtt20
-  };
+function iniciarMQTT(){
 
   client = mqtt.connect(
     'wss://broker.hivemq.com:8884/mqtt'
@@ -631,58 +555,108 @@ function iniciarMQTT(dados){
 
     console.log('MQTT conectado');
 
-    client.subscribe(Object.values(topicos));
+    client.subscribe([
+
+      topicos.temp,
+      topicos.press,
+      topicos.flow,
+      topicos.level,
+
+      topicos.leitura5,
+      topicos.leitura6,
+      topicos.leitura7,
+      topicos.leitura8,
+      topicos.leitura9,
+      topicos.leitura10
+    ]);
   });
 
   client.on('message',(topic,message)=>{
 
-    const valor = message.toString();
+    const valor =
+    message.toString();
 
     console.log(topic,valor);
 
-    if(topic === topicos.temperatura){
+    if(topic === topicos.temp){
 
-      document.getElementById('temp').innerHTML =
-      valor;
+      document.getElementById('temp')
+      .innerHTML = valor;
 
-      adicionarGrafico(valor);
+      addChart(valor);
     }
 
-    if(topic === topicos.pressao){
+    if(topic === topicos.press){
 
-      document.getElementById('press').innerHTML =
-      valor;
+      document.getElementById('press')
+      .innerHTML = valor;
     }
 
-    if(topic === topicos.vazao){
+    if(topic === topicos.flow){
 
-      document.getElementById('flow').innerHTML =
-      valor;
+      document.getElementById('flow')
+      .innerHTML = valor;
     }
 
-    if(topic === topicos.nivel){
+    if(topic === topicos.level){
 
-      document.getElementById('level').innerHTML =
-      valor;
-
-      document.getElementById('tankLabel').innerHTML =
-      valor + '%';
-
-      document.getElementById('tankLiquid').style.height =
-      valor + '%';
+      document.getElementById('level')
+      .innerHTML = valor;
     }
-
   });
 }
 
-// ============================================
-// GRAFICO
-// ============================================
+// BOTÕES
+
+function toggleMachine(id){
+
+  const el =
+  document.getElementById(id);
+
+  el.classList.toggle('off');
+
+  let estado =
+  el.classList.contains('off')
+  ? '0'
+  : '1';
+
+  if(id === 'm1'){
+
+    client.publish(
+      topicos.salvar1,
+      estado
+    );
+  }
+
+  if(id === 'm2'){
+
+    client.publish(
+      topicos.salvar2,
+      estado
+    );
+  }
+}
+
+// SLIDER
+
+function updateSlider(valor){
+
+  document.getElementById('sliderValue')
+  .innerHTML = valor + '%';
+
+  client.publish(
+    topicos.salvar3,
+    valor.toString()
+  );
+}
+
+// GRÁFICO
 
 const ctx =
-document.getElementById('chart').getContext('2d');
+document.getElementById('chart');
 
-const chart = new Chart(ctx,{
+const grafico =
+new Chart(ctx,{
 
   type:'line',
 
@@ -696,9 +670,10 @@ const chart = new Chart(ctx,{
 
       data:[],
 
-      borderColor:'#22d3ee',
+      borderColor:'#00e5ff',
 
-      backgroundColor:'rgba(34,211,238,0.2)',
+      backgroundColor:
+      'rgba(0,229,255,0.2)',
 
       borderWidth:3,
 
@@ -712,84 +687,50 @@ const chart = new Chart(ctx,{
 
     responsive:true,
 
-    maintainAspectRatio:false
+    maintainAspectRatio:false,
+
+    plugins:{
+
+      legend:{
+        labels:{
+          color:'white'
+        }
+      }
+    },
+
+    scales:{
+
+      x:{
+        ticks:{
+          color:'white'
+        }
+      },
+
+      y:{
+        ticks:{
+          color:'white'
+        }
+      }
+    }
   }
 });
 
-function adicionarGrafico(valor){
+function addChart(valor){
 
-  chart.data.labels.push(
-    new Date().toLocaleTimeString()
-  );
+  grafico.data.labels.push('');
 
-  chart.data.datasets[0].data.push(valor);
+  grafico.data.datasets[0]
+  .data.push(valor);
 
-  if(chart.data.labels.length > 20){
+  if(grafico.data.labels.length > 20){
 
-    chart.data.labels.shift();
+    grafico.data.labels.shift();
 
-    chart.data.datasets[0].data.shift();
+    grafico.data.datasets[0]
+    .data.shift();
   }
 
-  chart.update();
-}
-
-// ============================================
-// COMANDOS
-// ============================================
-
-function updateSlider(valor){
-
-  document.getElementById('sliderValue').innerHTML =
-  valor + '%';
-
-  if(client){
-
-    client.publish(
-      topicos.sliderSalvar,
-      valor.toString()
-    );
-  }
-}
-
-function enviarComando(comando){
-
-  if(client){
-
-    client.publish(
-      topicos.comandos,
-      comando
-    );
-  }
-}
-
-function toggleMachine(id){
-
-  const el = document.getElementById(id);
-
-  el.classList.toggle('off');
-
-  let estado =
-  el.classList.contains('off') ? '0' : '1';
-
-  if(client){
-
-    if(id === 'm1'){
-
-      client.publish(
-        topicos.bomba1,
-        estado
-      );
-    }
-
-    if(id === 'm2'){
-
-      client.publish(
-        topicos.bomba2,
-        estado
-      );
-    }
-  }
+  grafico.update();
 }
 
 </script>
